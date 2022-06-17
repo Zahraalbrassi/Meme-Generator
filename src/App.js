@@ -10,39 +10,98 @@ import Head from './components/Head';
 import Body from './components/Body';
 import boxes from './components/boxes';
 import Box from './components/Box';
+import Joke from './components/Joke';
+import jokeData from './jokeData';
+
+
+
 function App(props) {
   
-
-
-const [squares, setSquares]= React.useState(boxes)
-
  
-function toggle(id) {
-  setSquares(prevSquares => {
-      return prevSquares.map((square) => {
-          return square.id === id ? {...square, on: !square.on} : square
-      })
-  })
-}
 
-const squareElements = squares.map(square => (
-  <Box 
-      key={square.id} 
-      on={square.on} 
-      toggle={() => toggle(square.id)}
+
+const jokeElement = jokeData.map(joke =>{
+  return(
+  <Joke 
+ key={joke.id}
+ setup={joke.setup}
+ punchLine={joke.punchline}
   />
-))
+  )
+})
+ const [massages, setMassages] = React.useState(["a","b"])
+   const [dataform, setDataForm]= React.useState({
+    firstName : "",
+    lastName : "",
+    email:""
+   })
+ 
+console.log(dataform)
+   function handelChange(event){
+setDataForm(prevDataForm => {
+  return {
+    ...prevDataForm,
+    [event.target.name]: event.target.value  
+  }
+})
+}
 
   return (
     
    
       <div className="div">
-    { squareElements}
+<form><input 
+type="text"
+placeholder='First Name'
+onChange={handelChange} 
+name = "firstName"
+value={dataform.firstName}
+/>
+<input
+type='text'
+placeholder='Last Name'
+onChange={handelChange}
+name ="lastName"
+value={dataform.lastName}
+/>
+<input 
+type='email'
+placeholder='E-mail'
+onChange={handelChange}
+name="email"
+value={dataform.email} 
+/>
+</form>
      </div>
   );
- 
-
 }
+ export default App;
+  //{
+    //massages.length==0 ?<h1> 
+     // you're all Coguht up </h1>
+     // : 
+     // <h1>You have {massages.length} unread {massages.length >1 ? " massages": " massage"}</h1>
+  //}
+//}
+//const [squares, setSquares]= React.useState(boxes)
+
+ 
+//function toggle(id) {
+  //setSquares(prevSquares => {
+      //return prevSquares.map((square) => {
+          //return square.id === id ? {...square, on: !square.on} : square
+      //})
+  //})
+//}
+
+//const squareElements = squares.map(square => (
+ // <Box 
+      //key={square.id} 
+      //on={square.on} 
+      //toggle={() => toggle(square.id)}
+  ///>
+//))
+
 //const [contect, setContect]= React.useState({
   //firstName:"John",
   //lastName:"Doe",
@@ -110,7 +169,7 @@ const squareElements = squares.map(square => (
 //const thingsEleament = thingsArray.map(thing=> <p key={thing}> {thing}</p>)
 //<button onClick={addThings}>AddItems</button>
 //{thingsEleament}
-export default App;
+
 //const [isGoingOut, setIsGoingOut] = React.useState(true);
  
   //function changeMind(){
