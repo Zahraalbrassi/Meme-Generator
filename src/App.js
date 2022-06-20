@@ -17,29 +17,27 @@ import SignUp from './components/SignUp';
 
 
 
-function App(props) {
-  
- 
-
-
-const jokeElement = jokeData.map(joke =>{
-  return(
-  <Joke 
- key={joke.id}
- setup={joke.setup}
- punchLine={joke.punchline}
-  />
-  )
-})
- const [massages, setMassages] = React.useState(["a","b"])
+function App() {
 
   return (
     <div >
-    <SignUp />
+  
+    <Header />
+    <Meme />
      </div>
   );
 }
  export default App;
+ //const jokeElement = jokeData.map(joke =>{
+  //return(
+  //<Joke 
+ //key={joke.id}
+ //setup={joke.setup}
+ //punchLine={joke.punchline}
+ // />
+  //)
+//})
+ //const [massages, setMassages] = React.useState(["a","b"])
   //{
     //massages.length==0 ?<h1> 
      // you're all Coguht up </h1>
