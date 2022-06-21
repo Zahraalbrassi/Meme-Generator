@@ -18,12 +18,12 @@ import SignUp from './components/SignUp';
 
 
 function App() {
-
+  
+  
   return (
     <div >
-  
-    <Header />
-    <Meme />
+   <Header />
+   <Meme />
      </div>
   );
 }
