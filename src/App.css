@@ -96,7 +96,7 @@ width: 20px;
   
 }
 .meme {
-  position: relative;
+  position: absolute;
 }
 
 .meme--image {
@@ -135,4 +135,8 @@ width: 20px;
 
 .top {
   top: 0;
+}
+.container{
+    display: flex;
+    flex-direction: column;
 }

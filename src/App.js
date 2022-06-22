@@ -14,20 +14,31 @@ import Joke from './components/Joke';
 import jokeData from './jokeData';
 import Forms from './components/Forms';
 import SignUp from './components/SignUp';
+import WindowTracker from './components/WindowTracker';
 
 
 
 function App() {
   
-  
+ 
   return (
-    <div >
-   <Header />
-   <Meme />
+    <div  >
+    <Header />
+    <Meme />
      </div>
   );
 }
  export default App;
+  //const [show, setShow] = React.useState(true)
+  //function toggle(){
+   // console.log("logged")
+    //setShow(prevShow => !prevShow)
+  //}
+  
+ //<button   onClick={toggle}>
+ //Toggle WindowTracker
+//</button>
+//{show }
  //const jokeElement = jokeData.map(joke =>{
   //return(
   //<Joke 
